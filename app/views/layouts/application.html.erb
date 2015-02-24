@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DcDish</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class='banner'>
+		  <div class='user'>
+<% if current_user %>
+Welcome <%= current_user.name %> <%= image_tag current_user.profile_image %><br>
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+<% end %>
+		</div>
+	</div>
+
+
+<%= yield %>
+
+
+
+</body>
+</html>
