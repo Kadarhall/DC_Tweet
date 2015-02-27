@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root 'home#show'
+
 
 
 
@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   get '/auth/failure', to: redirect('/')
   get '/signout' => 'sessions#destroy', :as => :signout
 
-  resources :tweets
-  resources :sessions, only: [:create, :destroy]
-  resource :home, only: [:show]
 
+  resources :tweets
+
+  root to: "tweets#index"
 
   
 end

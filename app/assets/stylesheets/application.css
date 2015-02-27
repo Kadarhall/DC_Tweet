@@ -25,22 +25,165 @@ body img{
 }
 
 body {
-	background-color: #fff;
 	font-family: Lato, sans-serif;
+	height: 100%;
+	background: url("birdseye.jpg") no-repeat center fixed;
 }
 
 .banner {
   width: 100%;
   height: 6em;
-  background-color: #50BBF7;
+  background-color: #F46353;
   position: relative;
   color: #fff;
   padding: 1em;
+  margin-bottom: 10px;
  }
 
- .banner div {
+ .banner .user {
  	position: absolute;
- 	top: 50%
- 	left: 50%;
- 	float: right;
+ 	right: 5%;
+ 	top: .8em;
  }
+
+ .banner .title {
+ 	position: absolute;
+/* 	margin: auto;*/
+ 	left: 10%;
+ 	top: .3em;
+ 	font-size: 60px;
+ 	text-shadow: 0 0 20px;
+ }
+
+body .tweets {
+ 	height: 40%;
+ 	width: 49%;
+ 	float: left;
+ 	background-color: #fff;
+ 	margin-top: 10px;
+	margin-bottom: 60px;
+	margin-left: 10px;
+	padding: 2em;
+	border-radius: 10px;
+ }
+
+ body .neighborhoods {
+ 	height: 40%;
+ 	width: 49%;
+ 	float: right;
+ 	background-color: #fff;
+ 	margin-top: 10px;
+ 	margin-bottom: 60px;
+ 	margin-right: 10px;
+ 	padding: 2em;
+/* 	border-left: 2px solid #F46353;*/
+ 	border-radius: 10px;
+ }
+
+.tweets h1{
+ 	background-color: #F46353;
+ 	color: #fff;
+ 	font-size: 30px;
+ }
+
+.neighborhoods h2{
+ 	background-color: #F46353;
+ 	color: #fff;
+ 	font-size: 30px;
+ 	border-radius: 10px;
+ }
+
+ iframe {
+ 	margin-left: 5%;
+ 	border-radius: 30px;
+ }
+
+
+ h1 {
+ 	border-bottom: 2px solid #fff;
+ 	border-radius: 10px;
+ }
+
+ .nameImage {
+ 	background-color: #F46353;
+ 	color: #fff;
+ 	padding: 2px;
+ }
+
+#tweet {
+	padding: 6px;
+	font-size: 20px;
+	text-align: center;
+}
+
+ul {
+	border: 2px solid #F46353;
+	border-radius: 10px;
+}
+
+
+ul a{
+	text-decoration: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.change {
+	display: inline-block;
+	font-size: 20px;
+	padding-left: 4px;
+	padding-right: 4px;
+/*	background-color: #73B6E6;*/
+	border-radius: 20px;
+	text-decoration: none;
+	color: #fff;
+	padding-bottom: 20px;
+
+}
+
+#destroy {
+}
+
+.newTweet {
+	background-color: #73B6E6;
+	border-radius: 10px;
+	font-size: 40px;
+	text-decoration: none;
+	color: white;
+	padding-left: 30px;
+}
+
+ footer {
+ 	height: 10%;
+ 	bottom: 0;
+ 	width: 100%;
+ 	clear: both;
+ 	background-color: #F46353;
+ 	padding: 20px;
+ }
+
+ footer img {
+ 	background-color: #fff;
+ 	height: 50%;
+ 	width: 3%;
+ 	margin: 14px;
+
+ }
+
+form .submit textarea {
+ 	width: 80%;
+ 	border-radius: 10px;
+ 	display:inline;
+ 	font-size: 20px;
+ }
+
+form .actions button {
+ 	width: 30%;
+ 	border-radius: 10px;
+ 	display:inline;
+ 	background-color: #73B6E6;
+ 	font-size: 20px;
+ }
+

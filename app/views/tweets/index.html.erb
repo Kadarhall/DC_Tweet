@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tweets</h1>
+<br>
+<div class='newTweet'>
+<%= link_to 'New Tweet', new_tweet_path %>
+</div>
+<br>
+
+  <ul>
+    <% @tweets.each do |tweet| %>
+      <% @users.each do |user| %>
+        <% if tweet.user_id == user.id %>
+          <li class='nameImage'><%= user.name %></li>
+          <li class='nameImage'><%= image_tag user.profile_image %></li>
+          <li id='tweet'>"<%= tweet.body %>"</li>
+          <% if current_user == user %>
+          <li class='change'><%= link_to 'Show', tweet %></li>
+          <li class='change'><%= link_to 'Edit', edit_tweet_path(tweet) %></li>
+          <li class = 'change'><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          <% else %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <%= will_paginate @tweets, renderer: BootstrapPagination::Rails %>
+
+
+

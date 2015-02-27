@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
+gem 'will_paginate', '~> 3.0.7'
 gem 'responders'
 gem 'twitter', '5.13.0'
-gem 'omniauth-twitter'
+gem 'omniauth-twitter', '1.1.0'
 gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

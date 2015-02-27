@@ -6,6 +6,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class='banner'>
@@ -17,12 +27,41 @@ Welcome <%= current_user.name %> <%= image_tag current_user.profile_image %><br>
   <%= link_to "Sign in with Twitter", "/auth/twitter" %>
 <% end %>
 		</div>
+	<div class='title'>DC Dish
+		</div>
+
 	</div>
 
+<iframe width='90%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/kadarhall.lad4hc2o/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoia2FkYXJoYWxsIiwiYSI6Im9GVVV0dGcifQ.kj_3hN9V6hax3LncAlpWqQ'></iframe>
 
-<%= yield %>
+	<div class="tweets">
+		<%= yield %>
+	</div>
+
+	<div class="neighborhoods">
+<a class="twitter-timeline" href="https://twitter.com/DC_Dishstrict" data-widget-id="570709249232502784">Tweets by @DC_Dishstrict</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<!-- 		<h2>Neighborhoods</h2>
+		<ul>
+			<li>Petworth</li>
+			<li>Columbia Heights</li>
+			<li>Dupont Circle</li>
+			<li>NoMa</li>
+			<li>U Street</li>
+			<li>Georgetown</li>
+			<li>Adams Morgan</li>
+			<li>Waterfront</li>
+		</ul> -->
+	</div>
+
+	<footer>
+		<%= image_tag 'facebook29.png'%>
+		<%= image_tag 'twitter1.png'%>
+		<%= image_tag 'instagram13.png'%>
+		<%= image_tag 'github7.png'%>
+	</footer>
 
 
-
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
 </body>
 </html>
