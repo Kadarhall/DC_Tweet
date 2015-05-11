@@ -16,6 +16,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
 </head>
 <body>
 	<div class='banner'>
@@ -27,13 +28,41 @@ Welcome <%= current_user.name %> <%= image_tag current_user.profile_image %><br>
   <%= link_to "Sign in with Twitter", "/auth/twitter" %>
 <% end %>
 		</div>
-	<div class='title'>DC Dish
+	<div class='title'>DC Tweet
 		</div>
 
 	</div>
 
-<iframe width='90%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/kadarhall.lad4hc2o/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoia2FkYXJoYWxsIiwiYSI6Im9GVVV0dGcifQ.kj_3hN9V6hax3LncAlpWqQ'></iframe>
+<!-- <iframe width='90%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/kadarhall.lad4hc2o/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoia2FkYXJoYWxsIiwiYSI6Im9GVVV0dGcifQ.kj_3hN9V6hax3LncAlpWqQ'></iframe> -->
+<div id='map-four' class='map'> </div>
+ <script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoia2FkYXJoYWxsIiwiYSI6Im9GVVV0dGcifQ.kj_3hN9V6hax3LncAlpWqQ';
+var geojson = [
+  {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0366048812866,
+          38.89784666877921
+        ]
+      },
+      "properties": {}
+    }
+  ]
+}
 
+];
+var map = L.mapbox.map('map-four', 'examples.map-i86l3621', {
+    scrollWheelZoom: false
+}).setView([38.8929,-77.0252], 14);
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+myLayer.setGeoJSON(geojson);
+</script>
 	<div class="tweets">
 		<%= yield %>
 	</div>
@@ -62,6 +91,6 @@ Welcome <%= current_user.name %> <%= image_tag current_user.profile_image %><br>
 	</footer>
 
 
-<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+
 </body>
 </html>

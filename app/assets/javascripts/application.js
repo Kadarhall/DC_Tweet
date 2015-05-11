@@ -14,3 +14,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+// $(document).ready(function() {
+// 	$('.newTweet').mouseenter(function() {
+// 		$(this).fadeTo('fast', 0.5);
+// 	});
+// 	$('.newTweet').mouseleave(function() {
+// 		$(this).fadeTo('fast', 1);
+// 	});
+// });
+
+$(document).ready(function() {
+	$('.newTweet').mouseenter(function() {
+		$(this).css('background-color', '#F46353');
+	});
+	$('.newTweet').mouseleave(function() {
+		$(this).css('background-color', '#73B6E6');
+	});
+});

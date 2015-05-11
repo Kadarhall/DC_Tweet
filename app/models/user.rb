@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :tweets
+	has_many :likes
 
   def self.find_or_create_from_auth_hash(auth_hash)
     user = where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_create
@@ -19,5 +20,14 @@ class User < ActiveRecord::Base
       config.access_token        = token
       config.access_token_secret = secret
     end
+  end
+
+  def likes?(tweet)
+  	tweet.likes.where(user_id: id).any?
+  end
+
+  def avatar_url
+  	hash = Digest::MD5.hexdigest(email)
+  	"http://www.gravatar.com/avatar/#{hash}"
   end
 end

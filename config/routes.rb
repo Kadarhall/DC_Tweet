@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
 
 
-  resources :tweets
+  resources :tweets do
+    resource :like, module: :tweets
+  end
 
   root to: "tweets#index"
 

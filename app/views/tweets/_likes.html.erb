@@ -1,0 +1,11 @@
+<% if current_user && current_user.likes?(tweet) %>
+<%= link_to "Unlike", tweet_like_path(tweet), method: :delete, remote: true %>
+<% else %>
+<%= link_to "Like", tweet_like_path(tweet), method: :post, remote: true %>
+<% end %>
+
+<%= tweet.likes.count %>
+
+<% tweet.likes.each do |like| %>
+	<%= image_tag like.user.profile_image, width: 20 %>
+<% end %>
