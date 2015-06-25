@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'rails_12factor'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'will_paginate', '~> 3.0.7'
